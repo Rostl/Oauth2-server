@@ -1,0 +1,29 @@
+server:
+  port: 9191
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/oauth2_postgres
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    generate-ddl: false
+    properties:
+          hibernate:
+            naming:
+              physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+            ddl-auto: validate
+            show_sql: true
+            format_sql: true
+            temp:
+              use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+  servlet:
+    multipart:
+      enabled: false
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
